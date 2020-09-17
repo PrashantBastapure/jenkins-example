@@ -1,46 +1,14 @@
-def test = '1'
+// Define variable
+def myVariable = "foo"
+
+// Print variable
 pipeline {
-    agent any
-    parameters {
-        choice(
-            choices: ['greeting' , 'silence'],
-            description: '',
-            name: 'REQUESTED_ACTION')
+  agent any
+  stages {
+    stage ("Print variable") {
+      steps {
+        echo "My variable is ${myVariable}"
+      }
     }
-    
-    stages {
-        stage ('Speak') {
-            when {
-                // Only say hello if a "greeting" is requested
-                expression { params.REQUESTED_ACTION == 'greeting' }
-            }
-            steps {
-                                
-                echo "Hello, bitwiseman!"
-            }
-        }
-        
-        stage ('Silent') {
-            when {
-                // Only say hello if a "greeting" is requested
-                expression { params.REQUESTED_ACTION == 'silence' }
-            }
-            steps {
-                                
-                echo "Hello, Silent stage executed!"
-            }
-        } 
-        
-        stage ('Silence is not passed as input param') {
-            when {
-                not { 
-                    expression { params.REQUESTED_ACTION == 'silence' }
-                }
-            }
-            steps {
-                                
-                echo "Hello, Silent not selected!"
-            }
-        } 
-    }
+  }
 }
