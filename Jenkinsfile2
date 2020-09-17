@@ -30,5 +30,17 @@ pipeline {
                 echo "Hello, Silent stage executed!"
             }
         } 
+        
+        stage ('Silent') {
+            when {
+                not {
+                    expression { params.REQUESTED_ACTION == 'silence' }
+                }
+            }
+            steps {
+                                
+                echo "Hello, Silent not selected!"
+            }
+        } 
     }
 }
