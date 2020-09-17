@@ -24,6 +24,16 @@ pipeline {
                     env.SOMETHING = "1" // creates env.SOMETHING variable
                 }
                 
+                script {
+                    if (env.IS_BOOLEAN) {
+                        echo "You can see this message, because \"false\" String evaluates to Boolean.TRUE value"
+                    }
+
+                    if (env.IS_BOOLEAN.toBoolean() == false) {
+                        echo "You can see this message, because \"false\".toBoolean() returns Boolean.FALSE value"
+                    }
+                }
+                
                    
             }
         }
