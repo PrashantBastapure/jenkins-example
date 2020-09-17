@@ -6,6 +6,7 @@ pipeline {
   stages {
     stage ("Print variable") {
       steps {
+      def myVariable1 = "foo"
         echo "My variable is ${myVariable}"
       }
     }
