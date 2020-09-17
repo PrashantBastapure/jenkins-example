@@ -21,6 +21,11 @@ pipeline {
                 script {
                     env.SOMETHING = "1" // creates env.SOMETHING variable
                 }
+                
+                    environment {
+                        myname = "john"
+                        musurname = "smith"
+                    }
             }
         }
 
