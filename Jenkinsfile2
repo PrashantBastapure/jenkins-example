@@ -16,10 +16,10 @@ pipeline {
             }
             steps {
                  
-               // when {
+                when {
                 // Only say hello if a "greeting" is requested
-                //expression { test == '1' }
-                //}
+                expression { $test == '1' }
+                }
                 echo "Hello, bitwiseman!"
             }
         }
