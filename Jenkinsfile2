@@ -3,8 +3,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                 echo 'Fail!'; exit 1
                  currentBuild.result = 'UNSTABLE'
+                 echo 'Fail!'; exit 1
+                 
             }
         }
     }
