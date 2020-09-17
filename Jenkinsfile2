@@ -31,9 +31,9 @@ pipeline {
             }
         } 
         
-        stage ('Silence passed as input param') {
+        stage ('Silence is not passed as input param') {
             when {
-                not {
+                not { 
                     expression { params.REQUESTED_ACTION == 'silence' }
                 }
             }
