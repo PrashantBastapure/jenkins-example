@@ -15,14 +15,20 @@ pipeline {
                 expression { params.REQUESTED_ACTION == 'greeting' }
             }
             steps {
-                 
-                when {
-                // Only say hello if a "greeting" is requested
-                //expression { $test == '1' }
-                 expression { params.REQUESTED_ACTION == 'greeting' }
-                }
+                                
                 echo "Hello, bitwiseman!"
             }
         }
+        
+        stage ('Silent') {
+            when {
+                // Only say hello if a "greeting" is requested
+                expression { params.REQUESTED_ACTION == 'silence' }
+            }
+            steps {
+                                
+                echo "Hello, Silent stage executed!"
+            }
+        } 
     }
 }
