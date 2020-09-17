@@ -1,14 +1,11 @@
-// Define variable
-def myVariable = "foo"
-
-// Print variable
 pipeline {
-  agent any
-  stages {
-    stage ("Print variable") {
-      steps {
-        echo "My variable is ${myVariable}"
-      }
+    agent any
+
+    stages {
+        stage("Env Variables") {
+            steps {
+                sh "printenv"
+            }
+        }
     }
-  }
 }
