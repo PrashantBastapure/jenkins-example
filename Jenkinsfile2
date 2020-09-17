@@ -4,8 +4,8 @@ pipeline {
   agent any
   stages {
     stage ("Print variable") {
-      steps {
-        def myVariables = "foo1"
+      def myVariables = "foo1"
+      steps {       
         echo "My variable is ${myVariable}"
       }
     }
