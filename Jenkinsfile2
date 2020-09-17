@@ -4,7 +4,7 @@ def myVariable = "foo"
 pipeline {
   agent any
   stages {
-  def myVariable1 = "foo"
+  
     stage ("Print variable") {
     
       steps {
