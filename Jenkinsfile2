@@ -1,4 +1,5 @@
 def myVariable = "foo"
+
 // Print variable
 pipeline {
   agent any
@@ -9,3 +10,4 @@ pipeline {
       }
     }
   }
+}
