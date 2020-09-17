@@ -1,10 +1,11 @@
 def myVariable = "foo"
 // Print variable
 pipeline {
+def myVariables = "foo1"
   agent any
   stages {
     stage ("Print variable") {
-      def myVariables = "foo1"
+      
       steps {       
         echo "My variable is ${myVariable}"
       }
