@@ -6,7 +6,7 @@ pipeline {
             description: '',
             name: 'REQUESTED_ACTION')
     }
-
+    def test = 1
     stages {
         stage ('Speak') {
             when {
@@ -14,7 +14,7 @@ pipeline {
                 expression { params.REQUESTED_ACTION == 'greeting' }
             }
             steps {
-                 def test = 1
+                 
                 when {
                 // Only say hello if a "greeting" is requested
                 expression { test == '1' }
