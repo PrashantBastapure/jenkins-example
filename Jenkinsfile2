@@ -6,7 +6,7 @@ pipeline {
                  
                  echo 'Fail!'
                  sh 'exit 1'
-                 currentBuild.result = 'UNSTABLE'
+                 
             }
         }
     }
