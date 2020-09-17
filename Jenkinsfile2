@@ -12,6 +12,11 @@ pipeline {
                 NAME = "Alan" // overrides pipeline level NAME env variable
                 BUILD_NUMBER = "2" // overrides the default BUILD_NUMBER
             }
+            
+             environment {
+                        myname = "john"
+                        musurname = "smith"
+                    }
 
             steps {
                 echo "FOO = ${env.FOO}" // prints "FOO = bar"
@@ -22,10 +27,7 @@ pipeline {
                     env.SOMETHING = "1" // creates env.SOMETHING variable
                 }
                 
-                    environment {
-                        myname = "john"
-                        musurname = "smith"
-                    }
+                   
             }
         }
 
