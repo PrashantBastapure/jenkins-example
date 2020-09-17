@@ -13,10 +13,7 @@ pipeline {
                 BUILD_NUMBER = "2" // overrides the default BUILD_NUMBER
             }
             
-             environment {
-                        myname = "john"
-                        musurname = "smith"
-                    }
+             
 
             steps {
                 echo "FOO = ${env.FOO}" // prints "FOO = bar"
