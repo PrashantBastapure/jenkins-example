@@ -4,9 +4,9 @@ pipeline {
         stage('Test') {
             steps {
                  
-                 echo 'Fail!'; exit 1
+                 echo 'Fail!'
                  sh 'exit 1'
-                 echo $build_error
+                 echo $build_error1
                  
             }
         }
