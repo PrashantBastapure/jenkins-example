@@ -1,13 +1,28 @@
 pipeline {
-    agent any
-    stages {
-        stage('Deploy') {
-            steps {
-               
-                timeout(time: 3, unit: 'MINUTES') {
-                    sh './health-check.sh'
-                }
-            }
-        }
-    }
+
+agent any
+
+tools {
+maven 'mymaven3.6.3'
+}	
+
+	stages {
+				stage('test') {
+								environment {
+									mydockehub = credentials('DOKCER_HUB_PASSWORD')
+								}
+								
+								
+								
+									steps {
+										withMaven(maven: 'mymaven3.6.3') {
+											sh 'mvn clean'
+										}
+										
+										echo "mydockehub = ${env.mydockehub}"
+									}
+				}
+	}
+			
+			
 }
