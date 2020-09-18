@@ -3,7 +3,7 @@ pipeline {
 agent any
 
 tools {
-maven 'Apache Maven 3.5.3'
+maven 'mymaven3.6.3'
 }	
 
 	stages {
@@ -15,7 +15,7 @@ maven 'Apache Maven 3.5.3'
 								
 								
 									steps {
-										withMaven(maven: 'Apache Maven 3.5.3') {
+										withMaven(maven: 'mymaven3.6.3') {
 											sh 'mvn clean'
 										}
 										
