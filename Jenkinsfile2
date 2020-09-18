@@ -16,7 +16,7 @@ maven 'Apache Maven 3.5.3'
 								
 									steps {
 										withMaven(maven: 'Apache Maven 3.5.3') {
-											sh 'mvn 
+											sh 'mvn clean'
 										}
 										
 										echo "mydockehub = ${env.mydockehub}"
