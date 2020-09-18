@@ -3,7 +3,7 @@ pipeline {
 agent any
 
 tools {
-mvn 'MAVEN_HOME'
+maven 'MAVEN_HOME'
 }	
 
 	stages {
@@ -15,7 +15,7 @@ mvn 'MAVEN_HOME'
 								
 								
 									steps {
-										sh 'mvn clean'
+										sh 'maven clean'
 										
 										echo 'mydockehub = ${env.mydockehub}'
 									}
