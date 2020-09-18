@@ -1,28 +1,20 @@
+
+
 pipeline {
-
-agent any
-
-tools {
-maven 'mymaven3.6.3'
-}	
-
-	stages {
-				stage('test') {
-								environment {
-									mydockehub = credentials('DOKCER_HUB_PASSWORD')
-								}
-								
-								
-								
-									steps {
-										withMaven(maven: 'mymaven3.6.3') {
-											sh 'mvn clean'
-										}
-										
-										echo "mydockehub = ${env.mydockehub}"
-									}
-				}
-	}
-			
-			
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Hello World"'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                    echo "doing echo again"
+                '''
+            }
+        }
+    }
 }
+ 
+
+
