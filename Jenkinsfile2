@@ -12,10 +12,12 @@ mvn 'MAVEN_HOME'
 									mydockehub = credentials('DOKCER_HUB_PASSWORD')
 								}
 								
-								echo 'mydockehub = ${env.mydockehub}'
+								
 								
 									steps {
 										sh 'mvn clean'
+										
+										echo 'mydockehub = ${env.mydockehub}'
 									}
 				}
 	}
