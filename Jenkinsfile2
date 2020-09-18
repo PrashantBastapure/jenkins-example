@@ -17,7 +17,7 @@ maven 'MAVEN_HOME'
 									steps {
 										//sh 'maven clean'
 										
-										sh 'echo "mydockehub = ${env.mydockehub}"'
+										sh 'echo mydockehub = ${env.mydockehub}'
 									}
 				}
 	}
