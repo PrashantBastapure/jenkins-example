@@ -19,7 +19,7 @@ pipeline {
         failure {
             echo 'This will run only if failed'
 
-	    mail1 bcc: '', body: 'this build fails ${BUILD_NUMBER}', cc: '', from: '', replyTo: '', subject: 'hi', to: 'test@abc.com'
+	    mail bcc: '', body: 'this build fails ${BUILD_NUMBER}', cc: '', from: '', replyTo: '', subject: 'hi', to: 'test@abc.com'
         }
         unstable {
             echo 'This will run only if the run was marked as unstable'
